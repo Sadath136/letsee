@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>E-commerce website</title>
+    </head>
+    <body>
+        <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <input  id="name" name="username"  required type="text" class="form-control" placeholder="Enter name" />
+             <input id="phonenumber" name="phonenumber" required maxlength="10" type="text" class="form-control"  placeholder="Enter your Phonenumber"/>
+            <input type="file" name="file_upload">
+            <input type="submit" value="upload">
+        </form>
+    </body>
+</html>
