@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import boto3
-from Commerce.models import Collect
+from .models import Commerce_collect
 def homepage(request):
     information = Collect.objects.all()
     context = {'info': information}
