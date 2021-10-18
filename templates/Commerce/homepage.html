@@ -88,6 +88,8 @@
             <input type="submit" class="form-control" value="upload" id="submit">
             <input id="reset" class="form-control" type="reset" class="form-control"/>
         </form>
-        <h1>{{info}}</h1>
+        {% for i in info %}
+                                                                                    <h1>{{i.name}}</h1>
+        {% endfor %}
     </body>
 </html>
