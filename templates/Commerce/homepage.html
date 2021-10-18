@@ -88,16 +88,6 @@
             <input type="submit" class="form-control" value="upload" id="submit">
             <input id="reset" class="form-control" type="reset" class="form-control"/>
         </form>
-        <table border="2" id="iconic">
-                         <thead>
-                         <tr><td>NAME</td><td>Phonenumber</td></tr>
-                         </thead>
-                         <tbody>
-                         {% for i in info %}
-                                     <h1>{{i.name}}</h1> 
-                         {% endfor %}
-                         </tbody>
-                         
-        </table>
+        <h1>{{info}}</h1>
     </body>
 </html>
