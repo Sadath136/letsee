@@ -66,9 +66,14 @@
                             }
                           }
                         }
+                         $(function(){
+                            $("#iconic").dataTable();
+                           })
 
         </script>
         <!-- CSS only -->
+        <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
@@ -83,6 +88,16 @@
             <input type="submit" class="form-control" value="upload" id="submit">
             <input id="reset" class="form-control" type="reset" class="form-control"/>
         </form>
-        <a  style="font-style:italic;font-weight:bold;margin-top:500px;">ADMIN</a>
+        <table border="2" id="iconic">
+                         <thead>
+                         <tr><td>NAME</td><td>Phonenumber</td></tr>
+                         </thead>
+                         <tbody>
+                         {% for i in info %}
+                            <tr><td>{{i.name}}</td><td><img src="https://form-deployment.s3.us-east-2.amazonaws.com/{{i.image}}" height="200px" width="200px"</td></tr> 
+                         {% endfor %}
+                         </tbody>
+                         
+        </table>
     </body>
 </html>
