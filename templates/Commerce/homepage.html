@@ -76,9 +76,9 @@
     <body>
         <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
             <label>Name:</label>
-            <input  id="name" name="username"   required type="text" class="form-control" placeholder="Enter name" /><br/><br/>
+            <input  id="name" name="username" onkeyup="validate_name()"  required type="text" class="form-control" placeholder="Enter name" /><br/><br/>
             <label>Phonenumber:</label>
-            <input id="phonenumber" class="form-control" name="phonenumber" required maxlength="10" type="text" class="form-control"  placeholder="Enter your Phonenumber"/><br/><br/>
+            <input id="phonenumber" class="form-control" name="phonenumber" required maxlength="10" type="text" class="form-control" onkeyup="validate_phonenumber()" placeholder="Enter your Phonenumber"/><br/><br/>
             <input type="file" name="file_upload" required style="width:330px;" class="form-control" /><br/><br/>
             <input type="submit" class="form-control" value="upload" id="submit">
             <input id="reset" class="form-control" type="reset" class="form-control"/>
