@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import boto3
+from .models import Collect
 def homepage(request):
-    return render(request,'Commerce/homepage.html')
+    information = Collect.objects.all()
+    context = {'info': information}
+    return render(request,'Commerce/homepage.html',context)
 def su(request):
     if request.method=="POST":
         name = request.POST.get('username')
