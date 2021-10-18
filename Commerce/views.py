@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import boto3
-from models import Collect
+from . import models
 def homepage(request):
     information = Collect.objects.all()
     context = {'info': information}
