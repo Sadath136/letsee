@@ -36,7 +36,7 @@ def su(request):
             db = mysql.connector.connect(host="deployment.clm4ibgvdrzu.us-east-2.rds.amazonaws.com", passwd="Sadath8151",
                                          user="Sadath", database="Deployment")
             cursor = db.cursor()
-            cursor.execute("update Test_collect set image=%s where id=%s",(str(*kp)+str(file.name),*kp)
+            cursor.execute("update Test_collect set image=%s where id=%s",(str(*kp)+str(file.name),*kp))
             db.commit()
             db.close()
             return render(request,'Commerce/suc.html')
