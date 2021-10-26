@@ -1,28 +1,10 @@
+<!DOCTYPE html>
+{% load static %}
 <html>
+{% load pwa %}
+{% progressive_web_app_meta %}
     <head>
-<<<<<<< HEAD
         <title>E-commerce website</title>
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/>
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css"/>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"/>
-        <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"/>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"/>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"/>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"/>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"/>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"/>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"/>
-        <script type="text/javascript">
-                $(document).ready(function() {
-                $('letsee').DataTable( {
-                    dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} );
-        </script>
-=======
         <title>DEPLOYMENT</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Sadath s"/>
@@ -58,7 +40,7 @@
               color:purple;
             }
         </style>
-        <script type="text/javascript>
+        <script type="text/javascript">
                       function validate_phonenumber(){
                           var p=document.getElementById("phonenumber").value;
                           if(p.length==10){
@@ -97,23 +79,19 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
->>>>>>> 8baf7f1789f5c849ffd63f6a52bbc89ebcd90e41
+
     </head>
     <body>
         <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
             <label>Name:</label>
-            <input  id="name" name="username" onkeyup="validate_name()"  required type="text" class="form-control" placeholder="Enter name" /><br/><br/>
+            <input  id="name" name="username" onkeyup="validate_name()"  required type="text"  placeholder="Enter name" /><br/><br/>
             <label>Phonenumber:</label>
-            <input id="phonenumber" class="form-control" name="phonenumber" required maxlength="10" type="text" class="form-control" onkeyup="validate_phonenumber()" placeholder="Enter your Phonenumber"/><br/><br/>
+            <input id="phonenumber" class="form-control" name="phonenumber" required maxlength="10" type="text"  onkeyup="validate_phonenumber()" placeholder="Enter your Phonenumber"/><br/><br/>
             <input type="file" name="file_upload" required style="width:330px;" class="form-control" /><br/><br/>
             <input type="submit" class="form-control" value="upload" id="submit">
-            <input id="reset" class="form-control" type="reset" class="form-control"/>
+            <input id="reset" class="form-control" type="reset" />
         </form>
-<<<<<<< HEAD
         <table id="letsee" border="2">
-=======
-       <table id="letsee" border="2">
->>>>>>> 8baf7f1789f5c849ffd63f6a52bbc89ebcd90e41
             <thead>
                 <tr>
                     <td>
@@ -125,13 +103,8 @@
                 </tr>
             </thead>
             <tbody>
-
                 <tr>
-<<<<<<< HEAD
                     {% for i in list %}
-=======
-                    {% for i in info %}
->>>>>>> 8baf7f1789f5c849ffd63f6a52bbc89ebcd90e41
                     <td>{{i.1}}</td>
                     <td><img src="https://form-deployment.s3.us-east-2.amazonaws.com/{{i.3}}" height="200" width="200"> </td>
                 </tr>
