@@ -39,6 +39,16 @@ def su(request):
                                          passwd="Sadath8151",
                                          user="Sadath", database="Deployment")
             cursor = db.cursor()
+            cursor.execute('update  Commerce_collect set image=%s where id=%s',(str(*kp)+str(file.name),int(*kp)))
+            db.commit()
+            db.close()
+
+            import mysql.connector
+
+            db = mysql.connector.connect(host="deployment.clm4ibgvdrzu.us-east-2.rds.amazonaws.com",
+                                         passwd="Sadath8151",
+                                         user="Sadath", database="Deployment")
+            cursor = db.cursor()
             cursor.execute('select * from Commerce_collect')
             p = cursor.fetchall()
             db.commit()
