@@ -1,10 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import boto3
-
+from .models import Collect
 def homepage(request):
-    information = Collect.objects.all()
-    context = {'info': information}
+    import mysql.connector
+
+    db = mysql.connector.connect(host="deployment.clm4ibgvdrzu.us-east-2.rds.amazonaws.com", passwd="Sadath8151",
+                                 user="Sadath", database="Deployment")
+    cursor = db.cursor()
+    cursor.execute('select * from Commerce_collect')
+    p = cursor.fetchall()
+    db.commit()
+    db.close()
+    context={'list':p}
     return render(request,'Commerce/homepage.html',context)
 def su(request):
     if request.method=="POST":
@@ -32,6 +40,5 @@ def su(request):
         db = mysql.connector.connect(host="deployment.clm4ibgvdrzu.us-east-2.rds.amazonaws.com", passwd="Sadath8151",
                                      user="Sadath", database="Deployment")
         cursor = db.cursor()
-
         return render(request,'Commerce/suc.html')
 

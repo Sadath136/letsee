@@ -1,6 +1,26 @@
 <html>
     <head>
         <title>E-commerce website</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"/>
+        <script type="text/javascript">
+                $(document).ready(function() {
+                $('letsee').DataTable( {
+                    dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+        </script>
     </head>
     <body>
         <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
@@ -9,5 +29,26 @@
             <input type="file" name="file_upload">
             <input type="submit" value="upload">
         </form>
+        <table id="letsee" border="2">
+            <thead>
+                <tr>
+                    <td>
+                        name
+                    </td>
+                    <td>
+                        images
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    {% for i in list %}
+                    <td>{{i.1}}</td>
+                    <td><img src="https://form-deployment.s3.us-east-2.amazonaws.com/{{i.3}}" height="200" width="200"> </td>
+                </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
     </body>
 </html>
