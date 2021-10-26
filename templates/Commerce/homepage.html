@@ -91,25 +91,5 @@
             <input type="submit" class="form-control" value="upload" id="submit">
             <input id="reset" class="form-control" type="reset" />
         </form>
-        <table id="letsee" border="2">
-            <thead>
-                <tr>
-                    <td>
-                        name
-                    </td>
-                    <td>
-                        images
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    {% for i in list %}
-                    <td>{{i.1}}</td>
-                    <td><img src="https://form-deployment.s3.us-east-2.amazonaws.com/{{i.3}}" height="200" width="200"> </td>
-                </tr>
-                    {% endfor %}
-            </tbody>
-        </table>
     </body>
 </html>

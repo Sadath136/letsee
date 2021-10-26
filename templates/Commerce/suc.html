@@ -27,5 +27,25 @@
   <body>
     <img style="border-radius:230px;margin-left:450px" src="https://media3.giphy.com/media/fVh7Bfwwp5aWf4IbQL/giphy.gif?cid=ecf05e47za6rle5egz0ou6vchghd2lathy8c5amuo7px3rin&rid=giphy.gif&ct=g"/>
     <h3 style="margin-top:75px;margin-left:255px;font-variant:small-caps;color:#216381;font-family: 'Kalam', cursive;font-weight:bold;">YOU HAVE SUCCESSFULLY POSTED YOUR POST THANK YOU !!!!!!!!!!!!.............</h3>
+    <table id="letsee" border="2">
+            <thead>
+                <tr>
+                    <td>
+                        name
+                    </td>
+                    <td>
+                        images
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for i in list %}
+                    <td>{{i.1}}</td>
+                    <td><img src="https://form-deployment.s3.us-east-2.amazonaws.com/{{i.3}}" height="200" width="200"> </td>
+                </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
   </body>
 </html>
