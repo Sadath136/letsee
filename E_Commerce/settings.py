@@ -80,6 +80,7 @@ WSGI_APPLICATION = 'E_Commerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -88,10 +89,12 @@ DATABASES = {
         'PASSWORD':'Sadath8151',
         'PORT':'3306',
         'HOST':'deployment.clm4ibgvdrzu.us-east-2.rds.amazonaws.com'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8baf7f1789f5c849ffd63f6a52bbc89ebcd90e41
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
