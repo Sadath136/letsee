@@ -40,5 +40,5 @@ def su(request):
         db = mysql.connector.connect(host="deployment.clm4ibgvdrzu.us-east-2.rds.amazonaws.com", passwd="Sadath8151",
                                      user="Sadath", database="Deployment")
         cursor = db.cursor()
-        return render(request,'Commerce/suc.html')
+        return render(request,'ommerce/suc.html')
 
