@@ -1,4 +1,7 @@
 from django.contrib import admin
 from .models import Collect
-admin.site.register(Collect)
-# Register your models here.
+class CollectAdmin(admin.ModelAdmin):
+    fields = ['name','phone_number','image']
+    search_fields = ['name','phone_number','image']
+    list_filter = ['name','phone_number','image']
+admin.site.register(Collect,CollectAdmin)
