@@ -135,11 +135,12 @@ STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AWS_DEFAULT_ACL='public-read'
 AWS_S3_FILE_OVERWRITE=False
-django_heroku.settings(locals())
 PWA_APP_NAME = 'sadath_first_pwa'
 PWA_APP_DESCRIPTION = "sadath PWA"
 PWA_APP_THEME_COLOR = '#000000'
