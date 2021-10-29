@@ -82,8 +82,7 @@
 
     </head>
     <body>
-        <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
-          {% csrf_token %}
+        <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
             <label>Name:</label>
             <input  id="name" name="username" onkeyup="validate_name()"  required type="text"  placeholder="Enter name" /><br/><br/>
             <label>Phonenumber:</label>
