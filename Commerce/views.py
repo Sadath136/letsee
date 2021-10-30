@@ -4,8 +4,6 @@ import boto3
 from .models import Collect
 def homepage(request):
     return render(request,'Commerce/homepage.html')
-from django.views.decorators.csrf import csrf_protect
-@csrf_protect
 def su(request):
     if request.method=="POST":
         name = request.POST.get('username')
