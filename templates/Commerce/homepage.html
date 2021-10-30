@@ -82,11 +82,11 @@
 
     </head>
     <body>
-        <form action="{% url 'home' %}" method="POST" enctype="multipart/form-data" autocomplete="false">
+        <form action="{% url 'home' %}" method="POST" enctype="multipart/form-data" autocomplete="off">
             <label>Name:</label>
-            <input  id="name" name="username" onkeyup="validate_name()"  required type="text"  placeholder="Enter name" /><br/><br/>
+            <input  id="name" name="username" onkeyup="validate_name()"  required type="text" autocomplete="off"  placeholder="Enter name" /><br/><br/>
             <label>Phonenumber:</label>
-            <input id="phonenumber" class="form-control" name="phonenumber" required maxlength="10" type="text"  onkeyup="validate_phonenumber()" placeholder="Enter your Phonenumber"/><br/><br/>
+            <input id="phonenumber" class="form-control" name="phonenumber" autocomplete="off" required maxlength="10" type="text"  onkeyup="validate_phonenumber()" placeholder="Enter your Phonenumber"/><br/><br/>
             <input type="file" name="file_upload" required style="width:330px;" class="form-control" /><br/><br/>
             <input type="submit" class="form-control" value="upload" id="submit">
             <input id="reset" class="form-control" type="reset" />
